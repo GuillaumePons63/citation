@@ -1,0 +1,22 @@
+{
+  "name": "citation",
+  "version": "1.0.0",
+  "description": "API Pour apprendre à manipuler des APIs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GuillaumePons63/citation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GuillaumePons63/citation/issues"
+  },
+  "homepage": "https://github.com/GuillaumePons63/citation#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
