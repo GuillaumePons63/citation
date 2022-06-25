@@ -35,10 +35,9 @@ app.use(
     express.json()
 )
 
-app.get('/', (req, res) => {
-    res.send('test');
+app.get('/joke/all', ctrl.getAllJoke
 
-})
+)
 
 app.post('/joke/new',
 
