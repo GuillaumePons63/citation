@@ -2,7 +2,7 @@ const sequelize = require('../config/sequelize.js')
 const { DataTypes } = require("sequelize");
 
 const jokes = sequelize.define("jokes", {
-    jokes: {
+    joke: {
         type: DataTypes.TEXT(),
         allowNull: false,
     },
@@ -12,6 +12,6 @@ const jokes = sequelize.define("jokes", {
     }
 })
 
-console.log('test')
+
 
 module.exports = jokes;
