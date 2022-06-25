@@ -5,7 +5,14 @@ const sequelize = require('./config/sequelize.js');
 
 
 sequelize.authenticate()
-    .then(console.log('DATABase is ok'))
+    .then(() => {
+        const jokes = require("./models/jokes.js");
+        try {
+            jokes.sync();
+        } catch {
+            throw error;
+        }
+    })
     .catch(error => console.log(error))
 
 module.exports = app;
