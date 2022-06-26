@@ -21,4 +21,20 @@ exports.getAllJoke = (req, res, next) => {
 }
 
 
+exports.getOneJoke = (req, res, next) => {
+    console.log('test');
+    jokes.findOne({
+        where: {
+            id: req.params.id
+        }
+    })
+        .then((joke) => {
+            if (joke === null) {
+                res.status(404).json('ressource introuvable')
+            } else {
+                res.status(200).json(joke)
+            }
+        })
+        .catch((error) => res.status(400).json(error))
 
+}

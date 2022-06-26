@@ -1,8 +1,10 @@
 ###
-GET http://localhost:3000/ HTTP/1.1
-
+GET http://localhost:3000/joke/all HTTP/1.1
 
 ###
+GET http://localhost:300/joke//1 HTTP/1.1
+
+### 
 POST http://localhost:3000/joke/new HTTP/1.1
 Content-Type: application/json
 

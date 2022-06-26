@@ -7,6 +7,7 @@ const ctrl = require('./ctrl.js');
 
 
 
+
 sequelize.authenticate()
     .then(() => {
         const jokes = require("./models/jokes.js");
@@ -35,12 +36,15 @@ app.use(
     express.json()
 )
 
-app.get('/joke/all', ctrl.getAllJoke
+app.get('/joke/all',
+    ctrl.getAllJoke
+)
 
+app.get('/joke/:id',
+    ctrl.getOneJoke
 )
 
 app.post('/joke/new',
-
     ctrl.createJoke
 )
 
