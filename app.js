@@ -6,8 +6,6 @@ const sequelize = require('./config/sequelize.js');
 const ctrl = require('./ctrl.js');
 
 
-
-
 sequelize.authenticate()
     .then(() => {
         const jokes = require("./models/jokes.js");
@@ -46,6 +44,10 @@ app.get('/joke/:id',
 
 app.post('/joke/new',
     ctrl.createJoke
+)
+
+app.delete('/joke/delete/:id',
+    ctrl.deleteOneJoke
 )
 
 module.exports = app;

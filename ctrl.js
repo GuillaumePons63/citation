@@ -22,7 +22,6 @@ exports.getAllJoke = (req, res, next) => {
 
 
 exports.getOneJoke = (req, res, next) => {
-    console.log('test');
     jokes.findOne({
         where: {
             id: req.params.id
@@ -37,4 +36,14 @@ exports.getOneJoke = (req, res, next) => {
         })
         .catch((error) => res.status(400).json(error))
 
+}
+
+exports.deleteOneJoke = (req, res, next) => {
+    jokes.destroy({
+        where: {
+            id: req.params.id
+        }
+    })
+        .then(() => res.status(201).json({ message: "post supprimé" }))
+        .catch((error) => res.status(500).json({ error }));
 }

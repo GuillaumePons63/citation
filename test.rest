@@ -1,14 +1,22 @@
 ###
-GET http://localhost:3000/joke/all HTTP/1.1
+GET http://192.168.130.140:3000/joke/all HTTP/1.1
 
 ###
-GET http://localhost:300/joke//1 HTTP/1.1
+GET http://localhost:3000/joke/ HTTP/1.1
 
 ### 
-POST http://localhost:3000/joke/new HTTP/1.1
+POST http://192.168.130.140:3000/joke/new HTTP/1.1
 Content-Type: application/json
 
 {
-    "joke":"test",
-    "author":"moi"
+    "joke":"Combien de développeurs faut-t-il pour remplacer une ampoule grillée ? Aucun, c'est un problème Hardware.",
+    "author":"Topito"
 }
+
+###
+DELETE http://192.168.130.140:3000/joke/delete/3 HTTP/1.1
+Content-Type: application/json
+
+###
+get http://192.168.130.140/joke/:id/notes HTTP/1.1
+Content-Type: application/json
