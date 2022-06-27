@@ -9,8 +9,10 @@ const ctrl = require('./ctrl.js');
 sequelize.authenticate()
     .then(() => {
         const jokes = require("./models/jokes.js");
+        const notes = require('./models/notes.js');
         try {
             jokes.sync();
+            notes.sync();
         } catch {
             throw error;
         }
@@ -42,8 +44,16 @@ app.get('/joke/:id',
     ctrl.getOneJoke
 )
 
+app.get('/joke/:id/notes',
+    ctrl.getNotes
+)
+
 app.post('/joke/new',
     ctrl.createJoke
+)
+
+app.post('/joke/:id/newnote',
+    ctrl.createNote
 )
 
 app.delete('/joke/delete/:id',
