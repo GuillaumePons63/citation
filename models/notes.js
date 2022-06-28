@@ -10,6 +10,11 @@ const notes = sequelize.define("notes", {
     }
 })
 
-jokes.hasOne(notes);
+jokes.hasOne(notes, {
+    onDelete: 'CASCADE',
+    onUpdate: 'NO ACTION'
+});
+
+notes.belongsTo(jokes);
 
 module.exports = notes;

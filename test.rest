@@ -9,22 +9,22 @@ POST http://192.168.130.140:3000/joke/new HTTP/1.1
 Content-Type: application/json
 
 {
-    "joke":"Combien de développeurs faut-t-il pour remplacer une ampoule grillée ? Aucun, c'est un problème Hardware.",
-    "author":"Topito"
+    "joke":"Test",
+    "author":"Test"
 }
 
 ###
-DELETE http://192.168.130.140:3000/joke/delete/3 HTTP/1.1
+DELETE http://192.168.130.140:3000/joke/delete/5 HTTP/1.1
 Content-Type: application/json
 
 ###
-get http://192.168.130.140/joke/:id/notes HTTP/1.1
+get http://192.168.130.140:3000/joke/5/notes HTTP/1.1
 Content-Type: application/json
 
 ###
-post http://192.168.130.140:3000/joke/1/newnote HTTP/1.1
+post http://192.168.130.140:3000/joke/5/newnote HTTP/1.1
 Content-Type: application/json
 
 { 
-    "note" : "2"
+    "note" : "-2"
 }
