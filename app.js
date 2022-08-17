@@ -1,10 +1,12 @@
 const express = require("express");
+
 const app = express();
 require('dotenv').config();
+
 const sequelize = require('./config/sequelize.js');
 const jokesRoute = require('./routes/jokes')
 const notesRoute = require('./routes/notes')
-
+const usersRoute = require('./routes/users')
 
 
 
@@ -46,6 +48,7 @@ app.use('/joke', jokesRoute)
 
 app.use('/note', notesRoute)
 
+app.use('/login', usersRoute)
 
 
 
