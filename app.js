@@ -1,18 +1,22 @@
 const express = require("express");
 const app = express();
 require('dotenv').config();
-
 const sequelize = require('./config/sequelize.js');
-const ctrl = require('./ctrl.js');
+const jokesRoute = require('./routes/jokes')
+const notesRoute = require('./routes/notes')
+
+
 
 
 sequelize.authenticate()
     .then(() => {
-        const jokes = require("./models/jokes.js");
-        const notes = require('./models/notes.js');
+        const jokes = require("./models/jokes.js")
+        const notes = require('./models/notes.js')
+        const users = require('./models/users.js')
         try {
             jokes.sync();
             notes.sync();
+            users.sync();
         } catch {
             throw error;
         }
@@ -36,28 +40,16 @@ app.use(
     express.json()
 )
 
-app.get('/joke/all',
-    ctrl.getAllJoke
-)
 
-app.get('/joke/:id',
-    ctrl.getOneJoke
-)
 
-app.get('/joke/:id/notes',
-    ctrl.getNotes
-)
+app.use('/joke', jokesRoute)
 
-app.post('/joke/new',
-    ctrl.createJoke
-)
+app.use('/note', notesRoute)
 
-app.post('/joke/:id/newnote',
-    ctrl.createNote
-)
 
-app.delete('/joke/delete/:id',
-    ctrl.deleteOneJoke
-)
+
+
+
+
 
 module.exports = app;
